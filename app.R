@@ -107,7 +107,7 @@ server <- function(input, output) {
         final_pcts <- reactive(c(input$midterms,
                         input$homeworks,
                         project_pct() * 100,
-                        input$final_project))
+                        input$final_project / 60 * 100))
         
         final_pct <- reactive(sum(grade_wts * final_pcts()))
 
