@@ -99,7 +99,7 @@ server <- function(input, output) {
         project_pct <- reactive({
             max(sapply(3:5, function(i) {
                 numerator <- sum(project_scores())
-                denominator <- sum(project_scores()[-i])
+                denominator <- sum(project_totals[-i])
                 numerator / denominator
             }))
         })
